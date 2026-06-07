@@ -1,8 +1,208 @@
-<html>
-<head>
-	<title>personal website test</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>personal website</title>
+		<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+		<script>
+			$(window).ready(function(){
+				$("nav > p:first-of-type").on("click", function(){
+					
+					$(this).siblings().css({"opacity": 0.6});
+					$("h1").css({"color": "#490a18"});
+					$("nav").css({"width" : "32vw"});
+					$("body").css({"background-image": 'url("img_mat/mat1.jpg")'});
+
+				});
+				$("figure#jo3").on("click", function(){
+					$("h1").css({"color": "#ebf7e8"});
+					$("body").css({"background-image": 'url("img_mat/jo3.jpg")'});
+				});
+
+				$("figure#jo2").on("click", function(){
+					$("h1").css({"color": "#f0e9d1"});
+					$("body").css({"background-image": 'url("img_mat/jo2.jpg")'});
+				});
+
+				$("figure#jo1").on("click", function(){
+					$("h1").css({"color": "#f0d1d8"});
+					$("body").css({"background-image": 'url("img_mat/jo1.jpg")'});
+				});
+			});
+		 </script>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+		</style>
+		<style>
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html{
+				height: 100%;
+				width: 100%;
+			}
+
+			body{
+				height: 100%;
+				min-height: 100%;
+				width: 100%;
+				overflow-x: hidden;
+				font-family: serif;
+				font-size: 2.4vh;
+				line-height: 3.6vh;
+				text-align: center;
+			}
+
+			body{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin: 0;
+       			padding: 0;
+				background-size: cover;
+				background-image: url("img_mat/mat1.jpg");
+			}
+
+			section{
+				padding: 20px 0;
+			}
+
+			h1{
+				font-family: Kablammo, sans-serif;
+				font-size: 7vh;
+				color:#490a18;
+;
+				margin: 0;
+			}
+
+			section#ppp{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				flex-wrap: wrap;
+			}
+
+			figure > img{
+				max-width: 18vw;
+			}
+
+			figure{
+				position: relative;
+			}
+			figure:hover{
+				cursor: pointer;
+			}
+			figure > figcaption{
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 50px;
+				opacity: 0.65;
+			}
+
+			section#ppp > h2{
+				width: 18vw;
+				font-size: 5vh;
+				padding:2vh 6vw ;
+				color: #effedc;
+				text-align: left;
+			}
+			section#ppp > h3{
+				width: 40vw;
+				padding-right:5vw;
+				margin-top:2vh;
+				text-align: right;
+				color: #effedc;
+			}
+
+			nav{
+				color:#490a18;
+				margin-top:5vh;
+				opacity: 0.8;
+				width: 4vw;
+				display: flex;
+			    flex-direction: row;
+			    justify-content: space-evenly;
+			    transition: opacity 0.2s linear;
+			    font-family: Kablammo, sans-serif;
+			    
+			    
+			}
+
+			nav> p:first-of-type{
+				cursor: pointer;
+				font-size: 5vh;
+
+			}
+
+			nav >p:not(:first-of-type){
+				opacity: 0;
+				transition: opacity 0.3s ease-in
+			}
+
+			nav > p {
+				min-width:70px;
+				height: 9vh;
+				background-color:#effedc;
+				text-align: center;
+				border-radius: 100%;
+				line-height: 10vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			nav:hover{
+				opacity: 0.6;
+				width: 32vw;
+				transition: opacity 0.3s linear, width 0.5s linear;
+				
+			}
+			nav a{
+				color:#490a18;
+				text-decoration: none;
+
+			}
+
+		</style>
 </head>
 <body>
-this is my personal website
+	<article style="background-color: #e9fece66; width: 36%; border-radius: 10px; margin-top: 10vh;">
+    	<section>
+    	<h1> PERSONAL    WEBSITE</h1>	
+    	</section>  
+    	 	
+    </article>
+	<nav>
+            <p>◉</p>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="abtme.html">About me</a></p>
+            <p><a href="hobby.html">Hobby</a></p>
+    </nav>
+
+    <article style="width: 80%;">
+    	<section id= "ppp">
+    		<h2>My artworks </h2>
+    		<h3>(click them to see the corresponded aesthetics!)       
+    		 Insta: a.pol.ls</h3>
+    		<figure id="jo3">
+    			<img src="img_mat/jo3.png"/>
+    			<figcaption style="background-color: #a3b1e2;"> Jotaro × Frutiger Aero </figcaption>
+    		</figure>
+    		<figure id="jo2">
+    			<img src="img_mat/jo2.png"/>
+    			<figcaption style="background-color: beige;"> Josuke × Dreamcore </figcaption>
+    		</figure>
+    		<figure id="jo1">
+    			<img src="img_mat/jo1.png"/>
+    			<figcaption style="background-color: #c5e9ba;"> Jolyne × Vaporwave </figcaption>
+    		</figure>
+
+    	</section> 
+    </article>
+
+
 </body>
 </html>
