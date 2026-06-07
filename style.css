@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	font-family: serif;
+	font-size: 2.4vh;
+	line-height: 3.6vh;
+
+	background-size: cover;
+	background-image: url("img_mat/mat2.jpg")
+
+}
+
+nav#u{
+	position: absolute;
+	top:20vh;
+	left:17vw;
+	color:#626e99;
+	opacity: 0.8;
+	width: 7vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	transition: opacity 0.2s linear;
+	font-family: Kablammo, sans-serif;
+	    
+			    
+}
+
+nav#u > p {
+	margin: 5px;
+	min-width:20px;
+	min-height: 20px;
+	border-radius: 10px;
+	background-color:#effedc;
+	text-align: center;
+	line-height: 10vh;
+	display: block;
+	
+}
+
+nav#u> p:first-of-type{
+	cursor: pointer;
+	font-size: 5vh;
+
+}
+
+nav#u >p:not(:first-of-type){
+	display: none;
+}
+
+nav#u:hover{
+	opacity: 0.6;
+	transition: opacity 0.3s linear;
+				
+}
+nav#u a{
+	color:#626e99;
+	text-decoration: none;
+
+}
+article{
+	margin-top: 7vh;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+	overflow: hidden;
+}
+
+h1{
+	color: #effedc;
+	width:100%;
+	font-size: 30px;
+}
+
+section > p{
+	color: beige;
+	margin:10vh 5vw;
+	background-color:#8d9edb33;
+	font-size: 20px;
+}
+section:last-of-type{
+	width: 15%;
+}
+figure{
+
+	margin: 10vh 0;
+}
+
+figure > figcaption{
+
+	font-size: 19px;
+	background-color: #dce1f499;
+	border-radius: 5px;
+}
+figure > img{
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+nav#l{
+	position: absolute;
+	right:7.5vw;
+	top: 7.5vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color:#626e99;
+}
+
+nav#l>p{
+	background-color:#effedc;
+	border-radius: 100%;
+	min-width: 2vw;
+	text-align: center;
+	margin-left: 0.5vw;
+	font-size: 15px;
+}
+
+nav#l a{
+	color:#626e99;
+	text-decoration: none;
+}
