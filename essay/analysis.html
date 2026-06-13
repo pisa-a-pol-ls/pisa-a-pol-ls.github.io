@@ -5,6 +5,35 @@
 		<title>Expository Essay Writing</title>
 		<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 		<script src= "script.js"> </script>
+		<script>
+			$(window).ready(function(){
+				$("p > mark#a").on("click", function(){
+					$("article:last-of-type > section#a1").css({"display": "block"})
+					$("article:first-of-type").css({"opacity": 0.4})	
+				});
+
+				$("p > mark#b").on("click", function(){
+					$("article:last-of-type > section#b1").css({"display": "block"})
+					$("article:first-of-type").css({"opacity": 0.4})
+				});
+				
+				$("p > mark#c").on("click", function(){
+					$("article:last-of-type > section#c1").css({"display": "block"})
+					$("article:first-of-type").css({"opacity": 0.4})
+				});
+
+				$("p > mark#d").on("click", function(){
+					$("article:last-of-type > section#d1").css({"display": "block"})
+					$("article:first-of-type").css({"opacity": 0.4})
+				});
+
+
+				$("article:last-of-type > section > p:first-of-type").on("click", function(){
+					$("article:last-of-type > section").css({"display": "none"})
+					$("article:first-of-type").css({"opacity": 1})	
+				});
+			});
+		</script>
 		<style>
 			* {
 				margin: 0;
@@ -68,13 +97,13 @@
 				color: black;
 			}
 
-			article{
+			article:first-of-type{
 				width:72%;
 				height: 100%;
 				margin-top: 8vh;
 			}
 
-			section:first-of-type{
+			article:first-of-type > section:first-of-type{
 				text-align: center;
 				margin-bottom: 8vh;
 				width: 100%;
@@ -86,23 +115,48 @@
 				border: 6px dotted #EEF7F6;
 			}
 
-			section:not(:first-of-type) > p{
+			article:first-of-type > section:not(:first-of-type) > p{
 				margin: 5vh 0;
 				background-color: #EEF7F6;
 				border-left: 4px solid grey;
 				padding-left: 2vw;
 				padding-top: 2vh;
 
-				display: flex;
-				align-items: center;
-				text-align: left;
+				
 			}
 
 	
 
-			section:last-of-type{
+			article:first-of-type > section:last-of-type{
 				margin-bottom: 8vh;
 				text-align: right;
+			}
+
+			article:last-of-type{
+				position: fixed;
+				top:3vh;
+				right: 0;
+				height: 20vh;
+			}
+
+			mark{
+				cursor: pointer;
+			}
+
+			article:last-of-type > section{
+				background-color: #EEF7F6;
+				width: 50vw;
+				padding: 3vh 3vw;
+				position: relative;
+				display: none;
+			}
+
+			article:last-of-type > section > p:first-of-type{
+				position: absolute;
+				left: 1vw;
+				top: 1vh;
+				font-size: 20px;
+				cursor: pointer;
 			}
 
 		</style>
@@ -117,12 +171,11 @@
 	<article>
 		<section>
 			<h1 style="margin-right: 10vw;">Sample Analysis </h1>
-			<h2 style="width: 40vw;">One of the World’s Loneliest Countries Finds Companionship in Dogs</h2>
+			<h2 style="width: 40vw;">One of the World’s Loneliest Countries, Finds Companionship in Dogs</h2>
 		</section>
 		<section>
 			<p>
-				They have become pampered family members in South Korea, which has the world’s lowest birthrate and where much of the population lives alone.
-				The deceased lay wrapped in a cotton blanket, surrounded by white roses and hydrangea, angelic figurines and lit candles and incense. A wall-mounted screen displayed photographs of him. His 71-year-old companion, Kim Seon-ae, convulsed with tears as she bid farewell, caressing his head and face. Next door, young uniformed morticians prepared for his cremation.
+				<mark id="a" style="background-color: #F098B3;">They have become pampered family members in South Korea, which has the world’s lowest birthrate and where much of the population lives alone.</mark> The deceased lay wrapped in a cotton blanket, surrounded by white roses and hydrangea, angelic figurines and lit candles and incense. A wall-mounted screen displayed photographs of him. His 71-year-old companion, Kim Seon-ae, convulsed with tears as she bid farewell, caressing his head and face. Next door, young uniformed morticians prepared for his cremation.
 				The elaborate and emotional ritual was for a white poodle named Dalkong, who was nestled in a willow basket with his eyes still open.
 				“He was like a virus that infected me with happiness,” said Ms. Kim, who had lived with Dalkong for 13 years until he succumbed to heart disease. “We were family.”
 
@@ -130,7 +183,7 @@
 		</section>
 		<section>
 			<p>
-				Not long ago, South Korea often made global headlines – and raised the ire of animal rights groups – for its tradition of breeding dogs for meat.
+				<mark id="b" style="background-color: #CCF299;">Not long ago, South Korea often made global headlines</mark> – and raised the ire of animal rights groups – for its tradition of breeding dogs for meat.
 				But in recent years, people here have gravitated toward pets, especially dogs.
 				They are looking for companionship at a time when more South Koreans are choosing to stay single, childless or both. More than two-fifths of all households in the nation now consist of only one person.
 				The Covid-19 pandemic also did much to bring pets into homes, as people cooped up indoors adopted dogs and cats from shelters and the streets.
@@ -160,7 +213,7 @@
 		</section>
 		<section>
 			<p>
-				Now, dogs are family members that get splurged on.
+				<mark id="c" style="background-color: #F2EB99;">Now, dogs are family members that get splurged on.</mark>
 				Ms Sim Na-jeong says she wears an old, US$38 (S$49.60) padded jacket but has bought US$150 jackets for Liam, a jindo she adopted from a shelter four years ago.
 				“Liam is like a child to me,” said Ms Sim, 34, who does not plan to get married or have children. “I love him the way my mom loved me. I eat old food in the refrigerator, saving the freshest chicken breast for Liam.”
 				Her mother, Madam Park Young-seon, 66, said she felt sad that many young women had chosen not to have babies. But she said she had come to accept Liam as “my grandson.”
@@ -178,7 +231,7 @@
 		<section>
 			<p>
 				The growing industry surrounding pets has an underbelly: In 2023, animal welfare activists led the authorities to raid a puppy mill and rescue 1,400 dogs kept there under cruel conditions. Officials found dozens of dog carcasses in freezers.
-				As shocking as the episode was, the government’s role in rescuing the dogs and finding them shelters also reflected the country’s shifting attitude toward animal rights.
+				<mark id="d" style="background-color: #9F99F2;">As shocking as the episode was, the government’s role in rescuing the dogs and finding them shelters also reflected the country’s shifting attitude toward animal rights.</mark>
 				At the National Assembly, lawmakers have proposed new legislation that would ban the auctioning of puppies and tighten other regulations for dog breeders. 
 
 
@@ -186,6 +239,27 @@
 		</section>
 		<section>
 			<h5>By Choe Sang-Hun@The New York Times, Oct 12, 2024
+		</section>
+	</article>
+	<article>
+		<section id="a1">
+			<p>⛔</p>
+			<p>This thesis statement informs that <B>the dog will be the center of this essay.</B> It also helps readers guess that having a dog family member will become an alternative choice for having babies. It establish the central idea that, in a society marked by loneliness, low birthrates, and rising single-person households, <B>South Koreans increasingly treat dogs as family members and emotional companions.</B></p>
+		</section>
+
+		<section id="b1">
+			<p>⛔</p>
+			<p>This line is a great example of cohesive writing because it helps <B>connect</B> the first paragraph, which shows the current growing affection towards dogs, with the past dog-meat culture in the following words "for its tradition of breeding dogs for meat". Transitions like “Not long ago” <B>create smooth movement between ideas.</B></p>
+		</section>
+
+		<section id="c1">
+			<p>⛔</p>
+			<p>This line is a great example of coherent writing because it <B>continues</B> to illustrate the idea of having dogs as family members while connecting to another case or evidence where having dogs has become more prevalent. Moreover, using evidence where people bring their dogs to temple also helps <B>strengthen the ideas</B>, making the trend more credible.</p>
+		</section>
+
+		<section id="d1">
+			<p>⛔</p>
+			<p>This line best represents the takeaway from this essay by using a national change involving the government as an evidence to inform you how the preferences of offspring for Korean has shifted greatly. <B>This shift is also reshaping the culture, politics, consumer behavior, and attitudes toward animal rights.</B></p>
 		</section>
 	</article>
 </body>
